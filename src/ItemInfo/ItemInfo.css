@@ -1,0 +1,9 @@
+#infoContainer {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+}
+
+p {
+    font-weight: 500;
+}

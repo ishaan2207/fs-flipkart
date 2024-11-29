@@ -1,8 +1,12 @@
 import './Electronics.css';
 import ElectronicsItem from './ElectronicsItem/ElectronicsItem.js'
 import { useState } from 'react';
+import { useEffect } from 'react';
 
-function Electronics() {
+import SingleItem from './SingleItem/SingleItem.js';
+
+function Electronics({ getId }) {
+
     const products1 = [
         {
             source:
@@ -29,14 +33,6 @@ function Electronics() {
             name: "Best Selling Mobile Speakers",
         },
     ];
-
-    const [products, setProducts] = useState(products1)
-
-    function changeProducts() {
-        setProducts(products2);
-    }
-
-
 
     const products2 = [
         {
@@ -65,12 +61,24 @@ function Electronics() {
         },
     ];
 
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then((data) => data.json())
+            .then((response) => setProducts(response));
+    }, [])
+
+    function changeProducts() {
+        setProducts(products2);
+    }
+
     return (
         <div className='electronicsContainer'>
             <h1>Best of Electronics</h1>
             <div className='navContainer'>
                 {products.map((product) =>
-                    <ElectronicsItem source={product.source} alt={product.alt} name={product.name} />
+                    <SingleItem source={product.image} alt={product.id} name={product.title} getId={getId} />
                 )}
             </div>
             <button onClick={changeProducts}>Change Products</button>
