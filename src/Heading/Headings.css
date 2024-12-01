@@ -1,0 +1,44 @@
+/* Container styles */
+#headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: black;
+    height: 60px;
+    border-bottom: 2px solid black;
+}
+
+#headerContainer img {
+    height: 40px;
+}
+
+#headerContainer input[type="text"] {
+    flex: 1;
+    margin: 0 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgb(201, 236, 247);
+}
+
+#headerContainer input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.headerItem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.headerItem img {
+    height: 24px;
+    margin-right: 8px;
+}

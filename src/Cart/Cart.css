@@ -1,0 +1,38 @@
+#cartContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+#cartItems {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#placeOrder {
+    color: white;
+    background: rgb(255, 123, 0);
+    padding: 15px 30px;
+    border: none;
+    margin: 5px 0;
+    font-weight: 600;
+    align-self: flex-end;
+}
+
+#priceDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    align-self: flex-start;
+    padding: 7px 10px;
+    width: 15%;
+}
+
+#priceHeader {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-top: 0;
+    border-bottom: 1px solid lightgrey;
+}

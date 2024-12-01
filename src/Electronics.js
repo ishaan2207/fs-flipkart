@@ -2,13 +2,9 @@ import './Electronics.css';
 import ElectronicsItem from './ElectronicsItem/ElectronicsItem.js'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useUser } from "./Context/UserContext";
-
 import SingleItem from './SingleItem/SingleItem.js';
 
 function Electronics({ getId }) {
-
-    const { numItems, updateNumItems } = useUser();
 
     const products1 = [
         {
@@ -71,8 +67,6 @@ function Electronics({ getId }) {
             .then((data) => data.json())
             .then((response) => setProducts(response));
     }, [])
-
-    updateNumItems(products.length);
 
     function changeProducts() {
         setProducts(products2);
